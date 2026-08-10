@@ -1,7 +1,7 @@
 name: nightly selenium test with maven
 on:
   schedule:
-    - cron: '45 22 * * *' # Runs at 1:00 AM UTC every Monday through Friday
+    - cron: '25 22 * * *' # Runs at 1:00 AM UTC every Monday through Friday
   # workflow_dispatch:
   
 jobs:
@@ -18,4 +18,4 @@ jobs:
           java-version: '25'
 
       - name: Build and Test with Maven
-        run: mvn -B clean test -DsuiteXmlFile=testng.xml
+        run: mvn -B clean test
