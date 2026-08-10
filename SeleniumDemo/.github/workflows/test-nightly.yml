@@ -1,8 +1,8 @@
 name: nightly selenium test with maven
 on:
-  # schedule:
-  #   - cron: '0 1 * * 1-5' # Runs at 1:00 AM UTC every Monday through Friday
-  workflow_dispatch:
+  schedule:
+    - cron: '45 22 * * *' # Runs at 1:00 AM UTC every Monday through Friday
+  # workflow_dispatch:
   
 jobs:
   build-and-test:
