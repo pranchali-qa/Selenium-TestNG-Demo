@@ -25,6 +25,11 @@
 	    <version>4.34.0</version>
     	<scope>compile</scope>
 	</dependency>
+	  <dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-devtools-v126</artifactId>
+	    <version>4.22.0</version> <!-- Match this to your exact core Selenium version -->
+	</dependency>
     <!--
 		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
