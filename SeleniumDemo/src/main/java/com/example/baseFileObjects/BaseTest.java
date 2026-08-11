@@ -7,6 +7,8 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import java.io.File;
+import java.nio.file.Paths;
 
 public class BaseTest {
     protected Properties prop = initProperties();
@@ -16,12 +18,13 @@ public class BaseTest {
 	public static Properties initProperties() {
 		Properties prop = new Properties();
 		try {
-			FileInputStream ip = new FileInputStream(
-														System.getProperty("user.dir")
-												        + File.separator
-												        + "TestData"
-												        + File.separator
-												        + "TestData.properties");
+			String path = Paths.get(
+			        System.getProperty("user.dir"),
+			        "TestData",
+			        "TestData.properties"
+			).toString();
+			
+			FileInputStream ip = new FileInputStream(path);
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			log.error("File not found at the given location");
