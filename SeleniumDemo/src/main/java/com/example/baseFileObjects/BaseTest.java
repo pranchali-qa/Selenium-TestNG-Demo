@@ -17,7 +17,11 @@ public class BaseTest {
 		Properties prop = new Properties();
 		try {
 			FileInputStream ip = new FileInputStream(
-			        System.getProperty("user.dir") + "\\TestData\\TestData.properties");
+														System.getProperty("user.dir")
+												        + File.separator
+												        + "TestData"
+												        + File.separator
+												        + "TestData.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			log.error("File not found at the given location");
