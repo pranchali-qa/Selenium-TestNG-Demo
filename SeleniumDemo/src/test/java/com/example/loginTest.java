@@ -49,8 +49,7 @@ public class loginTest extends BaseTest {
 		loginObject.enterUserName(System.getenv("USERNAME"), wait);
 		log.info("Enter Password");
 		// loginObject.enterPassword(prop.getProperty("password"), wait);
-    	loginObject.enterPassword(System.getenv("ACCESS_KEY"), wait);
-
+    loginObject.enterPassword(System.getenv("ACCESS_KEY"), wait);
 		loginObject.clickOnSignInBtn(wait);
 		log.info("Click on log in button.");
 		System.out.println("Login with valid credentials succeeded");
