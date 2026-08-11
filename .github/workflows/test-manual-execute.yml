@@ -1,10 +1,10 @@
-name: nightly selenium test with maven
+name: manual execute workflow
 
 on:
   workflow_dispatch:
     inputs:
       browser:
-        type: choise
+        type: choice
         description: Select the browser to run the tests on
         default: chrome
         options:
