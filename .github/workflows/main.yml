@@ -23,4 +23,8 @@ jobs:
 
       - name: Build and Test with Maven
         working-directory: Selenium-TestNG-Demo
-        run: mvn clean test
+        run: |
+          pwd
+          ls -la
+          find . -name pom.xml
+          
