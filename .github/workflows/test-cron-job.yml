@@ -1,13 +1,12 @@
-name: every push to main branch triggers the workflow
+name: cron job every day at 5:20 PM UTC
 
 on:
-  push:
-    branches:
-      - main
-  #   schedule:
-  #     - cron: '25 22 * * *' # Runs at 1:00 AM UTC every Monday through Friday
-  # # workflow_dispatch:
-  
+  # push:
+  #   branches:
+  #     - main
+  schedule:
+    - cron: '20 17 * * *' # Runs at 5:20 PM UTC every day
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
