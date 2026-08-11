@@ -8,8 +8,8 @@ on:
         description: Select the browser to run the tests on
         default: chrome
         options:
-          - Chrome
-          - Firefox
+          - chrome
+          - firefox
   
 jobs:
   build-and-test:
