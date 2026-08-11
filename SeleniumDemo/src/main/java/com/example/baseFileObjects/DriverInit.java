@@ -45,7 +45,10 @@ public class DriverInit{
 			// driver = new ChromeDriver();
 		} else if (Browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--headless");
+			driver = new FirefoxDriver(options);
 		} else if (Browser.equals("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
