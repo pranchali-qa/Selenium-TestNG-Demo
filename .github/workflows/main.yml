@@ -22,9 +22,6 @@ jobs:
           java-version: '25'
 
       - name: Build and Test with Maven
-        working-directory: Selenium-TestNG-Demo
-        run: |
-          pwd
-          ls -la
-          find . -name pom.xml
+        working-directory: SeleniumDemo
+        run: mvn clean test
           
