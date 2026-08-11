@@ -24,7 +24,9 @@ public class DriverInit{
 
 	public DriverInit() {
 		Properties prop = BaseTest.initProperties();
-		String Browser = prop.getProperty("browser");
+		// String Browser = prop.getProperty("browser");
+		String Browser = System.getProperty("browser", "chrome");
+		System.out.println("Selected Browser: " + Browser);
 		if (Browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
 
