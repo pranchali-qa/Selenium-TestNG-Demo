@@ -1,15 +1,12 @@
 name: every push to main branch triggers the workflow
 
 on:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   #   schedule:
   #     - cron: '25 22 * * *' # Runs at 1:00 AM UTC every Monday through Friday
   # # workflow_dispatch:
-  schedule:
-    - cron: '32 12 * * *' # Runs at 5:40 PM UTC every day
-  workflow_dispatch:
   
 jobs:
   build-and-test:
