@@ -20,7 +20,13 @@ jobs:
         with:
           distribution: temurin
           java-version: '25'
-
+          
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+      
+      - name: Verify Chrome
+        run: google-chrome --version
+        
       - name: Build and Test with Maven
         working-directory: SeleniumDemo
         run: mvn clean test
