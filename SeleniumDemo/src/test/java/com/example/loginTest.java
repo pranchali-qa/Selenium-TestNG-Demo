@@ -46,10 +46,10 @@ public class loginTest extends BaseTest {
 		loginObject = new loginPage(driver);
 		log.info("Enter Username");
 
-		loginObject.enterUserName(prop.getProperty("username"), wait);
+		loginObject.enterUserName(System.getenv("USERNAME"), wait);
 			
 		log.info("Enter Password");
-		loginObject.enterPassword(prop.getProperty("password"), wait);
+		loginObject.enterPassword(System.getenv("ACCESS_KEY"), wait);
     
 		loginObject.clickOnSignInBtn(wait);
 		log.info("Click on log in button.");
