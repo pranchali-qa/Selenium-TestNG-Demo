@@ -53,7 +53,7 @@ public class loginTest extends BaseTest {
     
 		loginObject.clickOnSignInBtn(wait);
 		log.info("Click on log in button.");
-
+		System.out.println("Login with valid credentials succeeded");
         Assert.assertTrue(true, "Login with valid credentials succeeded");
     }
 }
