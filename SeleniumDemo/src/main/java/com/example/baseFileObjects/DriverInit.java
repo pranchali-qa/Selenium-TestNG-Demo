@@ -25,13 +25,7 @@ public class DriverInit{
 		String Browser = prop.getProperty("browser");
 		if (Browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless=new");
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			
-			driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 		} else if (Browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
