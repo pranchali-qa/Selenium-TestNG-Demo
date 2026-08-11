@@ -23,5 +23,30 @@ jobs:
           java-version: '25'
 
       - name: Build and Test with Maven
+        run: name: nightly selenium test with maven
+on:
+  push:
+    branches:
+      - main
+      - develop
+    pull-request:
+    schedule:
+      - cron: '25 22 * * *' # Runs at 1:00 AM UTC every Monday through Friday
+  # workflow_dispatch:
+  
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Build and Test with Maven
         working-directory: Selenium-TestNG-Demo
-        run: mvn clean test
+        run: cd .. && mvn clean test
