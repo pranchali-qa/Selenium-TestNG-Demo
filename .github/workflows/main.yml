@@ -29,5 +29,8 @@ jobs:
         
       - name: Build and Test with Maven
         working-directory: SeleniumDemo
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
         run: mvn clean test
           
