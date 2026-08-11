@@ -25,7 +25,20 @@ public class DriverInit{
 		String Browser = prop.getProperty("browser");
 		if (Browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless=new");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--disable-gpu");
+			options.addArguments("--window-size=1920,1080");
+			
+			ChromeDriverService service = new ChromeDriverService.Builder()
+			        .withVerbose(true)
+			        .build();
+
+			driver = new ChromeDriver(service, options);
+			// driver = new ChromeDriver();
 		} else if (Browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
