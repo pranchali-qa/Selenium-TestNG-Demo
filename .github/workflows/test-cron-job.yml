@@ -5,7 +5,8 @@ on:
   #   branches:
   #     - main
   schedule:
-    - cron: '20 17 * * *' # Runs at 5:20 PM UTC every day
+    - cron: '0 12 * * *' # Runs at 5:20 PM UTC every day
+  workflow_dispatch:
 
 jobs:
   build-and-test:
