@@ -49,4 +49,6 @@ jobs:
 
       - name: Build and Test with Maven
         working-directory: Selenium-TestNG-Demo
-        run: cd .. && mvn clean test
+        run: |
+            cd ..
+            mvn clean test
